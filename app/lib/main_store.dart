@@ -1,5 +1,6 @@
-
 //import 'dart:ffi';
+
+import 'dart:ffi';
 
 import 'package:app/modul/date_base.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class main_store extends StatelessWidget {
     return Scaffold(
       //AppBar
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(72, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(72, 255, 255, 255),
         title: const Column(children: [
           Text(
             "Hello! Comrade.",
@@ -50,13 +51,33 @@ class main_store extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       maxLines: 3,
                       style: const TextStyle(
-                      fontSize: 16, color: Color.fromARGB(255, 3, 97, 186),),
+                        fontSize: 16,
+                        color: Color.fromARGB(255, 3, 97, 186),
+                      ),
                     ),
-                   
-                    Text(
-                      productList[index].price.toString(),
-                      style: const TextStyle(
-                      fontSize: 16, color: Color.fromARGB(255, 201, 5, 5),),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          productList[index].price.toString(),
+                          style: const TextStyle(
+                            fontSize: 24,
+                            color: Color.fromARGB(255, 201, 5, 5),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Text(
+                          "Рублей",
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: Color.fromARGB(255, 201, 5, 5),
+                          ),
+                        ),
+                      ],
                     )
                   ],
                 )),
